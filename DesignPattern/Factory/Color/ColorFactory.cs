@@ -7,25 +7,25 @@ using Tools;
 namespace DesignPattern
 {
     /// <summary>
-    /// 工厂模式
+    /// 颜色工厂
     /// </summary>
-    public class ShapeFactory
+    public class ColorFactory
     {
         /// <summary>
         /// 图形接口所有实现
         /// </summary>
-        private static Dictionary<ShapeType, IShape> mImplDict = new Dictionary<ShapeType, IShape>();
+        private static Dictionary<ColorType, IColor> mImplDict = new Dictionary<ColorType, IColor>();
 
         /// <summary>
         /// 静态构造函数
         /// </summary>
-        static ShapeFactory()
+        static ColorFactory()
         {
-            foreach (var impl in ReflectionTool.GetInterfaceImplList<IShape>())
+            foreach (var impl in ReflectionTool.GetInterfaceImplList<IColor>())
             {
                 if (mImplDict.ContainsKey(impl.Type))
                 {
-                    throw new Exception($"IShape已经有Type={impl.Type}的实现");
+                    throw new Exception($"IColor已经有Type={impl.Type}的实现");
                 }
 
                 mImplDict[impl.Type] = impl;
@@ -37,7 +37,7 @@ namespace DesignPattern
         /// </summary>
         /// <param name="shapeType"></param>
         /// <returns></returns>
-        public static IShape GetShape(ShapeType shapeType)
+        public static IColor GetColor(ColorType shapeType)
         {
             if (mImplDict.TryGetValue(shapeType, out var impl))
             {

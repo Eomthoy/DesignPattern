@@ -6,14 +6,15 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
-            var shap1 = ShapeFactory.GetShape(ShapeType.Cricle);
-            shap1.Draw();
+            var shapeFactory = FactoryProducer.GetFactory(AbstractFactoryType.Shape);
+            shapeFactory.GetShape(ShapeType.Cricle).Draw();
+            shapeFactory.GetShape(ShapeType.Rectangle).Draw();
+            shapeFactory.GetShape(ShapeType.Square).Draw();
 
-            var shap2 = ShapeFactory.GetShape(ShapeType.Recrangle);
-            shap2.Draw();
-
-            var shap3 = ShapeFactory.GetShape(ShapeType.Square);
-            shap3.Draw();
+            var colorFactory = FactoryProducer.GetFactory(AbstractFactoryType.Color);
+            colorFactory.GetColor(ColorType.Red).Fill();
+            colorFactory.GetColor(ColorType.Blue).Fill();
+            colorFactory.GetColor(ColorType.Green).Fill();
 
             Console.ReadKey();
         }

@@ -7,9 +7,9 @@ namespace DesignPattern
     /// </summary>
     public class CricleImpl : IShape
     {
-        ShapeType IShape.Type => ShapeType.Cricle;
+        public ShapeType Type => ShapeType.Cricle;
 
-        void IShape.Draw()
+        public void Draw()
         {
             Console.WriteLine("Draw a Cricle");
         }

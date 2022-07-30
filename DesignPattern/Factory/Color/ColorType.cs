@@ -3,23 +3,23 @@
 namespace DesignPattern
 {
     /// <summary>
-    /// 工厂模式类型
+    /// 颜色类型
     /// </summary>
-    public enum ShapeType
+    public enum ColorType
     {
         /// <summary>
-        /// 
+        /// 红
         /// </summary>
-        Cricle = 1,
+        Red = 1,
 
         /// <summary>
-        /// 
+        /// 蓝
         /// </summary>
-        Square = 2,
+        Blue = 2,
 
         /// <summary>
-        /// 
+        /// 绿
         /// </summary>
-        Recrangle = 3,
+        Green = 3,
     }
 }

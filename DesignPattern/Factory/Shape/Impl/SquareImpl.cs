@@ -7,9 +7,9 @@ namespace DesignPattern
     /// </summary>
     public class SquareImpl : IShape
     {
-        ShapeType IShape.Type => ShapeType.Square;
+        public ShapeType Type => ShapeType.Square;
 
-        void IShape.Draw()
+        public void Draw()
         {
             Console.WriteLine("Draw a Square");
         }
